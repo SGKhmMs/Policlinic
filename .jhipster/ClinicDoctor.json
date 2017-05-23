@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "clinic",
+            "otherEntityName": "clinic",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "clinicDoctor"
+        },
+        {
+            "relationshipName": "doctor",
+            "otherEntityName": "doctor",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "clinicDoctor"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20170523045106",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "clinic_doctor",
+    "pagination": "no"
+}

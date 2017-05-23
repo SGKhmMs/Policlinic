@@ -1,0 +1,15 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "specialtyName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170523042632",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "specialty",
+    "pagination": "no"
+}

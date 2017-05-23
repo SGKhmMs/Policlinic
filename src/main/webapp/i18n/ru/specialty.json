@@ -1,0 +1,21 @@
+{
+    "clinicApp": {
+        "specialty" : {
+            "home": {
+                "title": "Specialties",
+                "createLabel": "Создать новый Specialty",
+                "createOrEditLabel": "Создать или отредактировать Specialty"
+            },
+            "created": "Новый Specialty создан с идентификатором {{ param }}",
+            "updated": "Specialty обновлен с идентификатором {{ param }}",
+            "deleted": "Specialty удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Specialty {{ id }}?"
+            },
+            "detail": {
+                "title": "Specialty"
+            },
+            "specialtyName": "Specialty Name"
+        }
+    }
+}

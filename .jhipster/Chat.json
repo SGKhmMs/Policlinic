@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "doctor",
+            "otherEntityName": "doctor",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "chat"
+        },
+        {
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "chat"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20170523045424",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "chat",
+    "pagination": "no"
+}

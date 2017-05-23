@@ -1,0 +1,62 @@
+
+<div *ngIf="client">
+    <h2><span jhiTranslate="clinicApp.client.detail.title">Client</span> {{client.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.client.name">Name</span></dt>
+        <dd>
+            <span>{{client.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.client.surname">Surname</span></dt>
+        <dd>
+            <span>{{client.surname}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.client.lastname">Lastname</span></dt>
+        <dd>
+            <span>{{client.lastname}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.client.phone">Phone</span></dt>
+        <dd>
+            <span>{{client.phone}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.client.adress">Adress</span></dt>
+        <dd>
+            <span>{{client.adress}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.client.email">Email</span></dt>
+        <dd>
+            <span>{{client.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.client.passHash">Pass Hash</span></dt>
+        <dd>
+            <span>{{client.passHash}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.client.birth_date">Birth Date</span></dt>
+        <dd>
+            <span>{{client.birth_date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.client.photo">Photo</span></dt>
+        <dd>
+            <div *ngIf="client.photo">
+                <a (click)="openFile(client.photoContentType, client.photo)">
+                    <img [src]="'data:' + client.photoContentType + ';base64,' + client.photo" style="max-width: 100%;" alt="client image"/>
+                </a>
+                {{client.photoContentType}}, {{byteSize(client.photo)}}
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'client/'+ client.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

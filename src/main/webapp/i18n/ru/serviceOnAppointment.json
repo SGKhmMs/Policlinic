@@ -1,0 +1,22 @@
+{
+    "clinicApp": {
+        "serviceOnAppointment" : {
+            "home": {
+                "title": "Service On Appointments",
+                "createLabel": "Создать новый Service On Appointment",
+                "createOrEditLabel": "Создать или отредактировать Service On Appointment"
+            },
+            "created": "Новый Service On Appointment создан с идентификатором {{ param }}",
+            "updated": "Service On Appointment обновлен с идентификатором {{ param }}",
+            "deleted": "Service On Appointment удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Service On Appointment {{ id }}?"
+            },
+            "detail": {
+                "title": "Service On Appointment"
+            },
+            "price": "Price",
+            "service": "Service"
+        }
+    }
+}

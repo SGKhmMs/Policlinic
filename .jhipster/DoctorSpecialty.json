@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "doctor",
+            "otherEntityName": "doctor",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "doctorSpecialty"
+        },
+        {
+            "relationshipName": "specialty",
+            "otherEntityName": "specialty",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "doctorSpecialty"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20170523042824",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "doctor_specialty",
+    "pagination": "no"
+}

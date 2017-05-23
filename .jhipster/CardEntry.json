@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "appointment",
+            "otherEntityName": "appointment",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "cardEntry"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "attachmentFile",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "text",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170523041035",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "card_entry",
+    "pagination": "no"
+}

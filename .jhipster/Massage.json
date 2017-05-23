@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "chat",
+            "otherEntityName": "chat",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "massage"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "timeOfSending",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "sender",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "text",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170523045758",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "massage",
+    "pagination": "no"
+}

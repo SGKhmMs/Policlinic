@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "service",
+            "otherEntityName": "service",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "serviceOnAppointment"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "price",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170523042151",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "service_on_appointment",
+    "pagination": "no"
+}

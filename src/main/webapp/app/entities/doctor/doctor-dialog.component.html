@@ -1,0 +1,80 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myDoctorLabel" jhiTranslate="clinicApp.doctor.home.createOrEditLabel">Create or edit a Doctor</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!doctor.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="doctor.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.doctor.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="doctor.name"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.doctor.surname" for="field_surname">Surname</label>
+            <input type="text" class="form-control" name="surname" id="field_surname"
+                [(ngModel)]="doctor.surname"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.doctor.lastname" for="field_lastname">Lastname</label>
+            <input type="text" class="form-control" name="lastname" id="field_lastname"
+                [(ngModel)]="doctor.lastname"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.doctor.phone" for="field_phone">Phone</label>
+            <input type="text" class="form-control" name="phone" id="field_phone"
+                [(ngModel)]="doctor.phone"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.doctor.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                [(ngModel)]="doctor.email"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.doctor.passHash" for="field_passHash">Pass Hash</label>
+            <input type="number" class="form-control" name="passHash" id="field_passHash"
+                [(ngModel)]="doctor.passHash"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.doctor.photo" for="field_photo">Photo</label>
+            <div>
+                <img [src]="'data:' + doctor.photoContentType + ';base64,' + doctor.photo" style="max-height: 100px;" *ngIf="doctor.photo" alt="doctor image"/>
+                <div *ngIf="doctor.photo" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{doctor.photoContentType}}, {{byteSize(doctor.photo)}}</span>
+                    <button type="button" (click)="doctor.photo=null;doctor.photoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, doctor, 'photo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="photo" id="field_photo"
+                [(ngModel)]="doctor.photo"
+             />
+            <input type="hidden" class="form-control" name="photoContentType" id="field_photoContentType"
+                [(ngModel)]="doctor.photoContentType" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

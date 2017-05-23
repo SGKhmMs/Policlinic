@@ -1,0 +1,56 @@
+<div>
+    <h2>
+        <span jhiTranslate="clinicApp.serviceOnAppointment.home.title">Service On Appointments</span>
+        <button class="btn btn-primary float-right create-service-on-appointment" [routerLink]="['/', { outlets: { popup: ['service-on-appointment-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="clinicApp.serviceOnAppointment.home.createLabel">
+            Create new Service On Appointment
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="serviceOnAppointments">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="clinicApp.serviceOnAppointment.price">Price</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let serviceOnAppointment of serviceOnAppointments ;trackBy: trackId">
+                <td><a [routerLink]="['../service-on-appointment', serviceOnAppointment.id ]">{{serviceOnAppointment.id}}</a></td>
+                <td>{{serviceOnAppointment.price}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../service-on-appointment', serviceOnAppointment.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'service-on-appointment/'+ serviceOnAppointment.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'service-on-appointment/'+ serviceOnAppointment.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

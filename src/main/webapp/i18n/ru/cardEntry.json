@@ -1,0 +1,23 @@
+{
+    "clinicApp": {
+        "cardEntry" : {
+            "home": {
+                "title": "Card Entries",
+                "createLabel": "Создать новый Card Entry",
+                "createOrEditLabel": "Создать или отредактировать Card Entry"
+            },
+            "created": "Новый Card Entry создан с идентификатором {{ param }}",
+            "updated": "Card Entry обновлен с идентификатором {{ param }}",
+            "deleted": "Card Entry удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Card Entry {{ id }}?"
+            },
+            "detail": {
+                "title": "Card Entry"
+            },
+            "attachmentFile": "Attachment File",
+            "text": "Text",
+            "appointment": "Appointment"
+        }
+    }
+}

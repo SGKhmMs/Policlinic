@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "clinicName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "workDatBegin",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "workDayEnd",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "receptionPhone",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170523044928",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "clinic",
+    "pagination": "no"
+}

@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "massage",
+            "otherEntityName": "massage",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "attechment"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "contentType",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170523050126",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "attechment",
+    "pagination": "no"
+}

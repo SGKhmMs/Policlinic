@@ -1,0 +1,26 @@
+{
+    "clinicApp": {
+        "appointment" : {
+            "home": {
+                "title": "Appointments",
+                "createLabel": "Create a new Appointment",
+                "createOrEditLabel": "Create or edit a Appointment"
+            },
+            "created": "A new Appointment is created with identifier {{ param }}",
+            "updated": "A Appointment is updated with identifier {{ param }}",
+            "deleted": "A Appointment is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Appointment {{ id }}?"
+            },
+            "detail": {
+                "title": "Appointment"
+            },
+            "beginTime": "Begin Time",
+            "endTime": "End Time",
+            "price": "Price",
+            "doctor": "Doctor",
+            "client": "Client",
+            "serviceOnAppointment": "Service On Appointment"
+        }
+    }
+}

@@ -7,6 +7,21 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "client": "Client",
+                "cardEntry": "Card Entry",
+                "doctor": "Doctor",
+                "appointment": "Appointment",
+                "service": "Service",
+                "serviceOnAppointment": "Service On Appointment",
+                "doctorReview": "Doctor Review",
+                "specialty": "Specialty",
+                "doctorSpecialty": "Doctor Specialty",
+                "clinic": "Clinic",
+                "clinicDoctor": "Clinic Doctor",
+                "chat": "Chat",
+                "massage": "Massage",
+                "attechment": "Attechment",
+                "clinicModerator": "Clinic Moderator",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

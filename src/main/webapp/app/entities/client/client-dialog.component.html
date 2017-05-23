@@ -1,0 +1,96 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myClientLabel" jhiTranslate="clinicApp.client.home.createOrEditLabel">Create or edit a Client</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!client.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="client.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.client.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="client.name"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.client.surname" for="field_surname">Surname</label>
+            <input type="text" class="form-control" name="surname" id="field_surname"
+                [(ngModel)]="client.surname"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.client.lastname" for="field_lastname">Lastname</label>
+            <input type="text" class="form-control" name="lastname" id="field_lastname"
+                [(ngModel)]="client.lastname"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.client.phone" for="field_phone">Phone</label>
+            <input type="text" class="form-control" name="phone" id="field_phone"
+                [(ngModel)]="client.phone"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.client.adress" for="field_adress">Adress</label>
+            <input type="text" class="form-control" name="adress" id="field_adress"
+                [(ngModel)]="client.adress"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.client.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                [(ngModel)]="client.email"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.client.passHash" for="field_passHash">Pass Hash</label>
+            <input type="number" class="form-control" name="passHash" id="field_passHash"
+                [(ngModel)]="client.passHash"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.client.birth_date" for="field_birth_date">Birth Date</label>
+            <div class="input-group">
+                <input id="field_birth_date" type="text" class="form-control" name="birth_date" ngbDatepicker  #birth_dateDp="ngbDatepicker" [(ngModel)]="client.birth_date"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="birth_dateDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.client.photo" for="field_photo">Photo</label>
+            <div>
+                <img [src]="'data:' + client.photoContentType + ';base64,' + client.photo" style="max-height: 100px;" *ngIf="client.photo" alt="client image"/>
+                <div *ngIf="client.photo" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{client.photoContentType}}, {{byteSize(client.photo)}}</span>
+                    <button type="button" (click)="client.photo=null;client.photoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, client, 'photo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="photo" id="field_photo"
+                [(ngModel)]="client.photo"
+             />
+            <input type="hidden" class="form-control" name="photoContentType" id="field_photoContentType"
+                [(ngModel)]="client.photoContentType" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

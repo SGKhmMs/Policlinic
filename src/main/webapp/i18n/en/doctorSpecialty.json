@@ -1,0 +1,22 @@
+{
+    "clinicApp": {
+        "doctorSpecialty" : {
+            "home": {
+                "title": "Doctor Specialties",
+                "createLabel": "Create a new Doctor Specialty",
+                "createOrEditLabel": "Create or edit a Doctor Specialty"
+            },
+            "created": "A new Doctor Specialty is created with identifier {{ param }}",
+            "updated": "A Doctor Specialty is updated with identifier {{ param }}",
+            "deleted": "A Doctor Specialty is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Doctor Specialty {{ id }}?"
+            },
+            "detail": {
+                "title": "Doctor Specialty"
+            },
+            "doctor": "Doctor",
+            "specialty": "Specialty"
+        }
+    }
+}

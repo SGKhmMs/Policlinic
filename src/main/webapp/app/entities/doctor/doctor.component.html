@@ -1,0 +1,73 @@
+<div>
+    <h2>
+        <span jhiTranslate="clinicApp.doctor.home.title">Doctors</span>
+        <button class="btn btn-primary float-right create-doctor" [routerLink]="['/', { outlets: { popup: ['doctor-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="clinicApp.doctor.home.createLabel">
+            Create new Doctor
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="doctors">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="clinicApp.doctor.name">Name</span></th>
+            <th><span jhiTranslate="clinicApp.doctor.surname">Surname</span></th>
+            <th><span jhiTranslate="clinicApp.doctor.lastname">Lastname</span></th>
+            <th><span jhiTranslate="clinicApp.doctor.phone">Phone</span></th>
+            <th><span jhiTranslate="clinicApp.doctor.email">Email</span></th>
+            <th><span jhiTranslate="clinicApp.doctor.passHash">Pass Hash</span></th>
+            <th><span jhiTranslate="clinicApp.doctor.photo">Photo</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let doctor of doctors ;trackBy: trackId">
+                <td><a [routerLink]="['../doctor', doctor.id ]">{{doctor.id}}</a></td>
+                <td>{{doctor.name}}</td>
+                <td>{{doctor.surname}}</td>
+                <td>{{doctor.lastname}}</td>
+                <td>{{doctor.phone}}</td>
+                <td>{{doctor.email}}</td>
+                <td>{{doctor.passHash}}</td>
+                <td>
+                    <a *ngIf="doctor.photo" (click)="openFile(doctor.photoContentType, doctor.photo)">
+                        <img [src]="'data:' + doctor.photoContentType + ';base64,' + doctor.photo" style="max-height: 30px;" alt="doctor image"/>
+                    </a>
+                    <span *ngIf="doctor.photo">{{doctor.photoContentType}}, {{byteSize(doctor.photo)}}</span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../doctor', doctor.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'doctor/'+ doctor.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'doctor/'+ doctor.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

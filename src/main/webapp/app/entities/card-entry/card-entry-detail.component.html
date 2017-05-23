@@ -1,0 +1,32 @@
+
+<div *ngIf="cardEntry">
+    <h2><span jhiTranslate="clinicApp.cardEntry.detail.title">Card Entry</span> {{cardEntry.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.cardEntry.attachmentFile">Attachment File</span></dt>
+        <dd>
+            <div *ngIf="cardEntry.attachmentFile">
+                <a (click)="openFile(cardEntry.attachmentFileContentType, cardEntry.attachmentFile)" jhiTranslate="entity.action.open">open</a>
+                {{cardEntry.attachmentFileContentType}}, {{byteSize(cardEntry.attachmentFile)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.cardEntry.text">Text</span></dt>
+        <dd>
+            <span>{{cardEntry.text}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'card-entry/'+ cardEntry.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,22 @@
+{
+    "clinicApp": {
+        "clinicDoctor" : {
+            "home": {
+                "title": "Clinic Doctors",
+                "createLabel": "Create a new Clinic Doctor",
+                "createOrEditLabel": "Create or edit a Clinic Doctor"
+            },
+            "created": "A new Clinic Doctor is created with identifier {{ param }}",
+            "updated": "A Clinic Doctor is updated with identifier {{ param }}",
+            "deleted": "A Clinic Doctor is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Clinic Doctor {{ id }}?"
+            },
+            "detail": {
+                "title": "Clinic Doctor"
+            },
+            "clinic": "Clinic",
+            "doctor": "Doctor"
+        }
+    }
+}

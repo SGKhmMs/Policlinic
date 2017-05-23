@@ -1,0 +1,27 @@
+{
+    "clinicApp": {
+        "doctor" : {
+            "home": {
+                "title": "Doctors",
+                "createLabel": "Создать новый Doctor",
+                "createOrEditLabel": "Создать или отредактировать Doctor"
+            },
+            "created": "Новый Doctor создан с идентификатором {{ param }}",
+            "updated": "Doctor обновлен с идентификатором {{ param }}",
+            "deleted": "Doctor удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Doctor {{ id }}?"
+            },
+            "detail": {
+                "title": "Doctor"
+            },
+            "name": "Name",
+            "surname": "Surname",
+            "lastname": "Lastname",
+            "phone": "Phone",
+            "email": "Email",
+            "passHash": "Pass Hash",
+            "photo": "Photo"
+        }
+    }
+}

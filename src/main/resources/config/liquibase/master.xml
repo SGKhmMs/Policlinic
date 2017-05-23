@@ -5,6 +5,21 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523035952_added_entity_Client.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523041035_added_entity_CardEntry.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523041526_added_entity_Doctor.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523041847_added_entity_Appointment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523042030_added_entity_Service.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523042151_added_entity_ServiceOnAppointment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523042526_added_entity_DoctorReview.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523042632_added_entity_Specialty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523042824_added_entity_DoctorSpecialty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523044928_added_entity_Clinic.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523045106_added_entity_ClinicDoctor.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523045424_added_entity_Chat.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523045758_added_entity_Massage.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523050126_added_entity_Attechment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170523050642_added_entity_ClinicModerator.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

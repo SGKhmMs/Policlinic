@@ -1,0 +1,33 @@
+
+<div *ngIf="appointment">
+    <h2><span jhiTranslate="clinicApp.appointment.detail.title">Appointment</span> {{appointment.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.appointment.beginTime">Begin Time</span></dt>
+        <dd>
+            <span>{{appointment.beginTime | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.appointment.endTime">End Time</span></dt>
+        <dd>
+            <span>{{appointment.endTime | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.appointment.price">Price</span></dt>
+        <dd>
+            <span>{{appointment.price}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'appointment/'+ appointment.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

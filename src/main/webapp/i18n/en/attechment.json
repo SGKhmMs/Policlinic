@@ -1,0 +1,22 @@
+{
+    "clinicApp": {
+        "attechment" : {
+            "home": {
+                "title": "Attechments",
+                "createLabel": "Create a new Attechment",
+                "createOrEditLabel": "Create or edit a Attechment"
+            },
+            "created": "A new Attechment is created with identifier {{ param }}",
+            "updated": "A Attechment is updated with identifier {{ param }}",
+            "deleted": "A Attechment is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Attechment {{ id }}?"
+            },
+            "detail": {
+                "title": "Attechment"
+            },
+            "contentType": "Content Type",
+            "massage": "Massage"
+        }
+    }
+}

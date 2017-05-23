@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "doctor",
+            "otherEntityName": "doctor",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "appointment"
+        },
+        {
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "appointment"
+        },
+        {
+            "relationshipName": "serviceOnAppointment",
+            "otherEntityName": "serviceOnAppointment",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "appointment"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "beginTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170523041847",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "appointment",
+    "pagination": "no"
+}

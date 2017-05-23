@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "appointment",
+            "otherEntityName": "appointment",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "doctorReview"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "reviewText",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170523042526",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "doctor_review",
+    "pagination": "no"
+}
