@@ -1,0 +1,33 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "chat"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "doctor",
+            "otherEntityName": "doctor",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "chat"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "massage",
+            "otherEntityName": "message",
+            "otherEntityRelationshipName": "chat"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20170528165306",
+    "entityTableName": "chat",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

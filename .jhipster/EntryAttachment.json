@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "cardEntry",
+            "otherEntityName": "cardEntry",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "attachmentFile",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        }
+    ],
+    "changelogDate": "20170528165256",
+    "entityTableName": "entry_attachment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

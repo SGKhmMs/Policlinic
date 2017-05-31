@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "clinicDoctor",
+            "otherEntityName": "clinicDoctor",
+            "otherEntityRelationshipName": "clinic"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "clinicModerator",
+            "otherEntityName": "clinicModerator",
+            "otherEntityRelationshipName": "clinic"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "clinicName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "beginOfWork",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endOfWork",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "registryPhone",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170528165250",
+    "entityTableName": "clinic",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

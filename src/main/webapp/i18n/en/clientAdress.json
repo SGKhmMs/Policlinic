@@ -1,0 +1,22 @@
+{
+    "clinicApp": {
+        "clientAdress" : {
+            "home": {
+                "title": "Client Adresses",
+                "createLabel": "Create a new Client Adress",
+                "createOrEditLabel": "Create or edit a Client Adress"
+            },
+            "created": "A new Client Adress is created with identifier {{ param }}",
+            "updated": "A Client Adress is updated with identifier {{ param }}",
+            "deleted": "A Client Adress is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Client Adress {{ id }}?"
+            },
+            "detail": {
+                "title": "Client Adress"
+            },
+            "adress": "Adress",
+            "client": "Client"
+        }
+    }
+}

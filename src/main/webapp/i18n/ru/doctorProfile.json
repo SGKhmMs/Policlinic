@@ -1,0 +1,23 @@
+{
+    "clinicApp": {
+        "doctorProfile" : {
+            "home": {
+                "title": "Doctor Profiles",
+                "createLabel": "Создать новый Doctor Profile",
+                "createOrEditLabel": "Создать или отредактировать Doctor Profile"
+            },
+            "created": "Новый Doctor Profile создан с идентификатором {{ param }}",
+            "updated": "Doctor Profile обновлен с идентификатором {{ param }}",
+            "deleted": "Doctor Profile удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Doctor Profile {{ id }}?"
+            },
+            "detail": {
+                "title": "Doctor Profile"
+            },
+            "email": "Email",
+            "passHash": "Pass Hash",
+            "doctor": "Doctor"
+        }
+    }
+}

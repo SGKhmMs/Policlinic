@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "clientProfile"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "passHash",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170528165301",
+    "entityTableName": "client_profile",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

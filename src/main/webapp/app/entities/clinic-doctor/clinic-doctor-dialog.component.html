@@ -1,0 +1,39 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myClinicDoctorLabel" jhiTranslate="clinicApp.clinicDoctor.home.createOrEditLabel">Create or edit a Clinic Doctor</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!clinicDoctor.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="clinicDoctor.id" readonly />
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="clinicApp.clinicDoctor.clinic" for="field_clinic">Clinic</label>
+            <select class="form-control" id="field_clinic" name="clinic" [(ngModel)]="clinicDoctor.clinic" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="clinicOption.id === clinicDoctor.clinic?.id ? clinicDoctor.clinic : clinicOption" *ngFor="let clinicOption of clinics; trackBy: trackClinicById">{{clinicOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="clinicApp.clinicDoctor.doctor" for="field_doctor">Doctor</label>
+            <select class="form-control" id="field_doctor" name="doctor" [(ngModel)]="clinicDoctor.doctor">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="doctorOption.id === clinicDoctor.doctor?.id ? clinicDoctor.doctor : doctorOption" *ngFor="let doctorOption of doctors; trackBy: trackDoctorById">{{doctorOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

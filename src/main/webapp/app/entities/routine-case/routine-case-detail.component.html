@@ -1,0 +1,39 @@
+
+<div *ngIf="routineCase">
+    <h2><span jhiTranslate="clinicApp.routineCase.detail.title">Routine Case</span> {{routineCase.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.routineCase.beginTime">Begin Time</span></dt>
+        <dd>
+            <span>{{routineCase.beginTime | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.routineCase.endTime">End Time</span></dt>
+        <dd>
+            <span>{{routineCase.endTime | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.routineCase.description">Description</span></dt>
+        <dd>
+            <span>{{routineCase.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.routineCase.doctorDayRoutine">Doctor Day Routine</span></dt>
+        <dd>
+            <div *ngIf="routineCase.doctorDayRoutine">
+                <a [routerLink]="['/doctor-day-routine', routineCase.doctorDayRoutine?.id]">{{routineCase.doctorDayRoutine?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'routine-case/'+ routineCase.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

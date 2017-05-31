@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "passHash",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170528165252",
+    "entityTableName": "clinic_moderator_profile",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

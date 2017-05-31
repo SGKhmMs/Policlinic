@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "doctor",
+            "otherEntityName": "doctor",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "doctorProfile"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "passHash",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170528165249",
+    "entityTableName": "doctor_profile",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

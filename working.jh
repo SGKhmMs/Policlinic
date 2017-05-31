@@ -1,0 +1,134 @@
+entity Doctor{
+	name String,
+    surname String,
+    lastname String,
+    phone String,
+    photo Blob
+}
+
+entity DoctorAdress{
+	adress String
+}
+
+entity DoctorProfile{
+    email String, 
+    passHash Long,
+}
+
+entity Clinic{
+	clinicName String,
+    adress String,
+    beginOfWork ZonedDateTime,
+    endOfWork ZonedDateTime,
+    registryPhone String
+}
+
+entity ClinicModerator{
+	surname String,
+    name String,
+    lastname String,
+    phone String
+}
+
+entity ClinicModeratorProfile{
+	passHash Long,
+    email String
+}
+
+entity DoctorDayRoutine{
+	dayBeginTime ZonedDateTime,
+    dayEndTime ZonedDateTime,
+    date LocalDate
+}
+
+entity RoutineCase{
+	beginTime ZonedDateTime,
+    endTime ZonedDateTime,
+    description String
+}
+
+entity CardEntry{
+	entryText String
+}
+
+entity EntryAttachment{
+	attachmentFile Blob
+}
+entity Specialty{
+	specialtyName String
+}
+
+entity Client{
+	name String,
+    surname String,
+    lastname String,
+    phone String,
+    photo Blob
+}
+
+entity Appointment{
+	price Double    
+}
+
+entity Service{
+	serviceName String
+}
+
+entity ClientProfile{
+	email String,
+    passHash Long
+}
+
+entity ClientAdress{
+	adress String
+}
+
+entity ClinicDoctor{
+}
+
+entity DoctorSpecialty{
+}
+
+entity DoctorReview{
+	reviewText String
+}
+
+entity Chat{
+}
+
+entity Message{
+	messageText String,
+    sender Integer,
+    dateTime ZonedDateTime
+}
+
+entity MessageAttachment{
+	attachmentFile Blob
+}
+
+relationship OneToMany{
+	Specialty{doctorSpecialty} to DoctorSpecialty,
+    Doctor{doctorSpecialty} to DoctorSpecialty,
+    Clinic{clinicDoctor} to ClinicDoctor,
+    Clinic{clinicModerator} to ClinicModerator,
+    CardEntry{entryAttachent} to EntryAttachment,
+    Doctor{doctorDayRoutine} to DoctorDayRoutine,
+    DoctorDayRoutine{routineCase} to RoutineCase,
+    Appointment{doctorRewiew} to DoctorReview,
+    Appointment{cardEntry} to CardEntry,
+    Chat{massage} to Message,
+    Message{massageAttachment} to MessageAttachment,
+    Client{appointment} to Appointment
+}
+
+relationship OneToOne{
+	ClinicDoctor{doctor} to Doctor,
+    ClientAdress{client} to Client,
+    ClientProfile{client} to Client,
+    DoctorProfile{doctor} to Doctor,
+    DoctorAdress{doctor} to Doctor,
+    Appointment{routineCase} to RoutineCase,
+    ClinicModerator{clinicModeratorProfile} to ClinicModeratorProfile,
+    Chat{client} to Client,
+    Chat{doctor} to Doctor
+}

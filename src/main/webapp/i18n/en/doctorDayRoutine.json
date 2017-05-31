@@ -1,0 +1,25 @@
+{
+    "clinicApp": {
+        "doctorDayRoutine" : {
+            "home": {
+                "title": "Doctor Day Routines",
+                "createLabel": "Create a new Doctor Day Routine",
+                "createOrEditLabel": "Create or edit a Doctor Day Routine"
+            },
+            "created": "A new Doctor Day Routine is created with identifier {{ param }}",
+            "updated": "A Doctor Day Routine is updated with identifier {{ param }}",
+            "deleted": "A Doctor Day Routine is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Doctor Day Routine {{ id }}?"
+            },
+            "detail": {
+                "title": "Doctor Day Routine"
+            },
+            "dayBeginTime": "Day Begin Time",
+            "dayEndTime": "Day End Time",
+            "date": "Date",
+            "doctor": "Doctor",
+            "routineCase": "Routine Case"
+        }
+    }
+}

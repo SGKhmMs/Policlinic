@@ -1,0 +1,64 @@
+<div>
+    <h2>
+        <span jhiTranslate="clinicApp.clientProfile.home.title">Client Profiles</span>
+        <button class="btn btn-primary float-right create-client-profile" [routerLink]="['/', { outlets: { popup: ['client-profile-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="clinicApp.clientProfile.home.createLabel">
+            Create new Client Profile
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="clientProfiles">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="clinicApp.clientProfile.email">Email</span></th>
+            <th><span jhiTranslate="clinicApp.clientProfile.passHash">Pass Hash</span></th>
+            <th><span jhiTranslate="clinicApp.clientProfile.client">Client</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let clientProfile of clientProfiles ;trackBy: trackId">
+                <td><a [routerLink]="['../client-profile', clientProfile.id ]">{{clientProfile.id}}</a></td>
+                <td>{{clientProfile.email}}</td>
+                <td>{{clientProfile.passHash}}</td>
+                <td>
+                    <div *ngIf="clientProfile.client">
+                        <a [routerLink]="['../client', clientProfile.client?.id ]" >{{clientProfile.client?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../client-profile', clientProfile.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'client-profile/'+ clientProfile.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'client-profile/'+ clientProfile.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

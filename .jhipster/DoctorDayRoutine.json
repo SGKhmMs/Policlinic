@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "doctor",
+            "otherEntityName": "doctor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "routineCase",
+            "otherEntityName": "routineCase",
+            "otherEntityRelationshipName": "doctorDayRoutine"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dayBeginTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dayEndTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170528165253",
+    "entityTableName": "doctor_day_routine",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

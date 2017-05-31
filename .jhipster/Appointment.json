@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "routineCase",
+            "otherEntityName": "routineCase",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "appointment"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "appointmentOperation",
+            "otherEntityName": "appointmentOperation",
+            "otherEntityRelationshipName": "appointment"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "doctorRewiew",
+            "otherEntityName": "doctorReview",
+            "otherEntityRelationshipName": "appointment"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "cardEntry",
+            "otherEntityName": "cardEntry",
+            "otherEntityRelationshipName": "appointment"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "price",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170528165259",
+    "entityTableName": "appointment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

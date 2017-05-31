@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="clinicApp.clinicModerator.home.title">Clinic Moderators</span>
+        <button class="btn btn-primary float-right create-clinic-moderator" [routerLink]="['/', { outlets: { popup: ['clinic-moderator-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="clinicApp.clinicModerator.home.createLabel">
+            Create new Clinic Moderator
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="clinicModerators">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="clinicApp.clinicModerator.surname">Surname</span></th>
+            <th><span jhiTranslate="clinicApp.clinicModerator.name">Name</span></th>
+            <th><span jhiTranslate="clinicApp.clinicModerator.lastname">Lastname</span></th>
+            <th><span jhiTranslate="clinicApp.clinicModerator.phone">Phone</span></th>
+            <th><span jhiTranslate="clinicApp.clinicModerator.clinic">Clinic</span></th>
+            <th><span jhiTranslate="clinicApp.clinicModerator.clinicModeratorProfile">Clinic Moderator Profile</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let clinicModerator of clinicModerators ;trackBy: trackId">
+                <td><a [routerLink]="['../clinic-moderator', clinicModerator.id ]">{{clinicModerator.id}}</a></td>
+                <td>{{clinicModerator.surname}}</td>
+                <td>{{clinicModerator.name}}</td>
+                <td>{{clinicModerator.lastname}}</td>
+                <td>{{clinicModerator.phone}}</td>
+                <td>
+                    <div *ngIf="clinicModerator.clinic">
+                        <a [routerLink]="['../clinic', clinicModerator.clinic?.id ]" >{{clinicModerator.clinic?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="clinicModerator.clinicModeratorProfile">
+                        <a [routerLink]="['../clinic-moderator-profile', clinicModerator.clinicModeratorProfile?.id ]" >{{clinicModerator.clinicModeratorProfile?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../clinic-moderator', clinicModerator.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'clinic-moderator/'+ clinicModerator.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'clinic-moderator/'+ clinicModerator.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

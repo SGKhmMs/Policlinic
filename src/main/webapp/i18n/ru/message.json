@@ -1,0 +1,25 @@
+{
+    "clinicApp": {
+        "message" : {
+            "home": {
+                "title": "Messages",
+                "createLabel": "Создать новый Message",
+                "createOrEditLabel": "Создать или отредактировать Message"
+            },
+            "created": "Новый Message создан с идентификатором {{ param }}",
+            "updated": "Message обновлен с идентификатором {{ param }}",
+            "deleted": "Message удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Message {{ id }}?"
+            },
+            "detail": {
+                "title": "Message"
+            },
+            "messageText": "Message Text",
+            "sender": "Sender",
+            "dateTime": "Date Time",
+            "chat": "Chat",
+            "massageAttachment": "Massage Attachment"
+        }
+    }
+}

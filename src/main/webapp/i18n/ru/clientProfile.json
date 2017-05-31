@@ -1,0 +1,23 @@
+{
+    "clinicApp": {
+        "clientProfile" : {
+            "home": {
+                "title": "Client Profiles",
+                "createLabel": "Создать новый Client Profile",
+                "createOrEditLabel": "Создать или отредактировать Client Profile"
+            },
+            "created": "Новый Client Profile создан с идентификатором {{ param }}",
+            "updated": "Client Profile обновлен с идентификатором {{ param }}",
+            "deleted": "Client Profile удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Client Profile {{ id }}?"
+            },
+            "detail": {
+                "title": "Client Profile"
+            },
+            "email": "Email",
+            "passHash": "Pass Hash",
+            "client": "Client"
+        }
+    }
+}

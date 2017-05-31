@@ -1,0 +1,27 @@
+{
+    "clinicApp": {
+        "clinic" : {
+            "home": {
+                "title": "Clinics",
+                "createLabel": "Создать новый Clinic",
+                "createOrEditLabel": "Создать или отредактировать Clinic"
+            },
+            "created": "Новый Clinic создан с идентификатором {{ param }}",
+            "updated": "Clinic обновлен с идентификатором {{ param }}",
+            "deleted": "Clinic удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Clinic {{ id }}?"
+            },
+            "detail": {
+                "title": "Clinic"
+            },
+            "clinicName": "Clinic Name",
+            "adress": "Adress",
+            "beginOfWork": "Begin Of Work",
+            "endOfWork": "End Of Work",
+            "registryPhone": "Registry Phone",
+            "clinicDoctor": "Clinic Doctor",
+            "clinicModerator": "Clinic Moderator"
+        }
+    }
+}

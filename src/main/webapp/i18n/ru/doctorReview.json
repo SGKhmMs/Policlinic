@@ -1,0 +1,22 @@
+{
+    "clinicApp": {
+        "doctorReview" : {
+            "home": {
+                "title": "Doctor Reviews",
+                "createLabel": "Создать новый Doctor Review",
+                "createOrEditLabel": "Создать или отредактировать Doctor Review"
+            },
+            "created": "Новый Doctor Review создан с идентификатором {{ param }}",
+            "updated": "Doctor Review обновлен с идентификатором {{ param }}",
+            "deleted": "Doctor Review удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Doctor Review {{ id }}?"
+            },
+            "detail": {
+                "title": "Doctor Review"
+            },
+            "reviewText": "Review Text",
+            "appointment": "Appointment"
+        }
+    }
+}

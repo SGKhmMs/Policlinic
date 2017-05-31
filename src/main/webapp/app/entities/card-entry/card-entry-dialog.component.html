@@ -1,0 +1,38 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCardEntryLabel" jhiTranslate="clinicApp.cardEntry.home.createOrEditLabel">Create or edit a Card Entry</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!cardEntry.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="cardEntry.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.cardEntry.entryText" for="field_entryText">Entry Text</label>
+            <input type="text" class="form-control" name="entryText" id="field_entryText"
+                [(ngModel)]="cardEntry.entryText"
+             />
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="clinicApp.cardEntry.appointment" for="field_appointment">Appointment</label>
+            <select class="form-control" id="field_appointment" name="appointment" [(ngModel)]="cardEntry.appointment" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="appointmentOption.id === cardEntry.appointment?.id ? cardEntry.appointment : appointmentOption" *ngFor="let appointmentOption of appointments; trackBy: trackAppointmentById">{{appointmentOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

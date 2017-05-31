@@ -1,0 +1,65 @@
+<div>
+    <h2>
+        <span jhiTranslate="clinicApp.entryAttachment.home.title">Entry Attachments</span>
+        <button class="btn btn-primary float-right create-entry-attachment" [routerLink]="['/', { outlets: { popup: ['entry-attachment-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="clinicApp.entryAttachment.home.createLabel">
+            Create new Entry Attachment
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="entryAttachments">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="clinicApp.entryAttachment.attachmentFile">Attachment File</span></th>
+            <th><span jhiTranslate="clinicApp.entryAttachment.cardEntry">Card Entry</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let entryAttachment of entryAttachments ;trackBy: trackId">
+                <td><a [routerLink]="['../entry-attachment', entryAttachment.id ]">{{entryAttachment.id}}</a></td>
+                <td>
+                    <a *ngIf="entryAttachment.attachmentFile" (click)="openFile(entryAttachment.attachmentFileContentType, entryAttachment.attachmentFile)" jhiTranslate="entity.action.open">open</a>
+                    <span *ngIf="entryAttachment.attachmentFile">{{entryAttachment.attachmentFileContentType}}, {{byteSize(entryAttachment.attachmentFile)}}</span>
+                </td>
+                <td>
+                    <div *ngIf="entryAttachment.cardEntry">
+                        <a [routerLink]="['../card-entry', entryAttachment.cardEntry?.id ]" >{{entryAttachment.cardEntry?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../entry-attachment', entryAttachment.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'entry-attachment/'+ entryAttachment.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'entry-attachment/'+ entryAttachment.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

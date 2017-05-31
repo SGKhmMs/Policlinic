@@ -1,0 +1,49 @@
+
+<div *ngIf="clinicModerator">
+    <h2><span jhiTranslate="clinicApp.clinicModerator.detail.title">Clinic Moderator</span> {{clinicModerator.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.clinicModerator.surname">Surname</span></dt>
+        <dd>
+            <span>{{clinicModerator.surname}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.clinicModerator.name">Name</span></dt>
+        <dd>
+            <span>{{clinicModerator.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.clinicModerator.lastname">Lastname</span></dt>
+        <dd>
+            <span>{{clinicModerator.lastname}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.clinicModerator.phone">Phone</span></dt>
+        <dd>
+            <span>{{clinicModerator.phone}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.clinicModerator.clinic">Clinic</span></dt>
+        <dd>
+            <div *ngIf="clinicModerator.clinic">
+                <a [routerLink]="['/clinic', clinicModerator.clinic?.id]">{{clinicModerator.clinic?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.clinicModerator.clinicModeratorProfile">Clinic Moderator Profile</span></dt>
+        <dd>
+            <div *ngIf="clinicModerator.clinicModeratorProfile">
+                <a [routerLink]="['/clinic-moderator-profile', clinicModerator.clinicModeratorProfile?.id]">{{clinicModerator.clinicModeratorProfile?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'clinic-moderator/'+ clinicModerator.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

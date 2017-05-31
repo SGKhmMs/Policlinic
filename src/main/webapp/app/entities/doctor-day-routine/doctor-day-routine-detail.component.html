@@ -1,0 +1,39 @@
+
+<div *ngIf="doctorDayRoutine">
+    <h2><span jhiTranslate="clinicApp.doctorDayRoutine.detail.title">Doctor Day Routine</span> {{doctorDayRoutine.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.doctorDayRoutine.dayBeginTime">Day Begin Time</span></dt>
+        <dd>
+            <span>{{doctorDayRoutine.dayBeginTime | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.doctorDayRoutine.dayEndTime">Day End Time</span></dt>
+        <dd>
+            <span>{{doctorDayRoutine.dayEndTime | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.doctorDayRoutine.date">Date</span></dt>
+        <dd>
+            <span>{{doctorDayRoutine.date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.doctorDayRoutine.doctor">Doctor</span></dt>
+        <dd>
+            <div *ngIf="doctorDayRoutine.doctor">
+                <a [routerLink]="['/doctor', doctorDayRoutine.doctor?.id]">{{doctorDayRoutine.doctor?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'doctor-day-routine/'+ doctorDayRoutine.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

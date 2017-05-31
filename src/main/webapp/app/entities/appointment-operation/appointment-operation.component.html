@@ -1,0 +1,68 @@
+<div>
+    <h2>
+        <span jhiTranslate="clinicApp.appointmentOperation.home.title">Appointment Operations</span>
+        <button class="btn btn-primary float-right create-appointment-operation" [routerLink]="['/', { outlets: { popup: ['appointment-operation-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="clinicApp.appointmentOperation.home.createLabel">
+            Create new Appointment Operation
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="appointmentOperations">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="clinicApp.appointmentOperation.price">Price</span></th>
+            <th><span jhiTranslate="clinicApp.appointmentOperation.appointment">Appointment</span></th>
+            <th><span jhiTranslate="clinicApp.appointmentOperation.operation">Operation</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let appointmentOperation of appointmentOperations ;trackBy: trackId">
+                <td><a [routerLink]="['../appointment-operation', appointmentOperation.id ]">{{appointmentOperation.id}}</a></td>
+                <td>{{appointmentOperation.price}}</td>
+                <td>
+                    <div *ngIf="appointmentOperation.appointment">
+                        <a [routerLink]="['../appointment', appointmentOperation.appointment?.id ]" >{{appointmentOperation.appointment?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="appointmentOperation.operation">
+                        <a [routerLink]="['../operation', appointmentOperation.operation?.id ]" >{{appointmentOperation.operation?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../appointment-operation', appointmentOperation.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'appointment-operation/'+ appointmentOperation.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'appointment-operation/'+ appointmentOperation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

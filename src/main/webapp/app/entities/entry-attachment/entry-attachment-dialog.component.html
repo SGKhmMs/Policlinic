@@ -1,0 +1,51 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myEntryAttachmentLabel" jhiTranslate="clinicApp.entryAttachment.home.createOrEditLabel">Create or edit a Entry Attachment</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!entryAttachment.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="entryAttachment.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="clinicApp.entryAttachment.attachmentFile" for="field_attachmentFile">Attachment File</label>
+            <div>
+                <div *ngIf="entryAttachment.attachmentFile" class="form-text text-danger clearfix">
+                    <a class="pull-left" (click)="openFile(entryAttachment.attachmentFileContentType, entryAttachment.attachmentFile)" jhiTranslate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{entryAttachment.attachmentFileContentType}}, {{byteSize(entryAttachment.attachmentFile)}}</span>
+                    <button type="button" (click)="entryAttachment.attachmentFile=null;entryAttachment.attachmentFileContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" (change)="setFileData($event, entryAttachment, 'attachmentFile', false)" jhiTranslate="entity.action.addblob"/>
+            </div>
+            <input type="hidden" class="form-control" name="attachmentFile" id="field_attachmentFile"
+                [(ngModel)]="entryAttachment.attachmentFile"
+             />
+            <input type="hidden" class="form-control" name="attachmentFileContentType" id="field_attachmentFileContentType"
+                [(ngModel)]="entryAttachment.attachmentFileContentType" />
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="clinicApp.entryAttachment.cardEntry" for="field_cardEntry">Card Entry</label>
+            <select class="form-control" id="field_cardEntry" name="cardEntry" [(ngModel)]="entryAttachment.cardEntry" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="cardEntryOption.id === entryAttachment.cardEntry?.id ? entryAttachment.cardEntry : cardEntryOption" *ngFor="let cardEntryOption of cardentries; trackBy: trackCardEntryById">{{cardEntryOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

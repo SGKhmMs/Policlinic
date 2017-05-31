@@ -1,0 +1,29 @@
+
+<div *ngIf="clinicModeratorProfile">
+    <h2><span jhiTranslate="clinicApp.clinicModeratorProfile.detail.title">Clinic Moderator Profile</span> {{clinicModeratorProfile.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.clinicModeratorProfile.passHash">Pass Hash</span></dt>
+        <dd>
+            <span>{{clinicModeratorProfile.passHash}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.clinicModeratorProfile.email">Email</span></dt>
+        <dd>
+            <span>{{clinicModeratorProfile.email}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'clinic-moderator-profile/'+ clinicModeratorProfile.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

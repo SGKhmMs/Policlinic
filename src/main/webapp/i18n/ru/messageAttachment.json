@@ -1,0 +1,22 @@
+{
+    "clinicApp": {
+        "messageAttachment" : {
+            "home": {
+                "title": "Message Attachments",
+                "createLabel": "Создать новый Message Attachment",
+                "createOrEditLabel": "Создать или отредактировать Message Attachment"
+            },
+            "created": "Новый Message Attachment создан с идентификатором {{ param }}",
+            "updated": "Message Attachment обновлен с идентификатором {{ param }}",
+            "deleted": "Message Attachment удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Message Attachment {{ id }}?"
+            },
+            "detail": {
+                "title": "Message Attachment"
+            },
+            "attachmentFile": "Attachment File",
+            "message": "Message"
+        }
+    }
+}

@@ -1,0 +1,44 @@
+
+<div *ngIf="doctor">
+    <h2><span jhiTranslate="clinicApp.doctor.detail.title">Doctor</span> {{doctor.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.doctor.name">Name</span></dt>
+        <dd>
+            <span>{{doctor.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.doctor.surname">Surname</span></dt>
+        <dd>
+            <span>{{doctor.surname}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.doctor.lastname">Lastname</span></dt>
+        <dd>
+            <span>{{doctor.lastname}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.doctor.phone">Phone</span></dt>
+        <dd>
+            <span>{{doctor.phone}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.doctor.photo">Photo</span></dt>
+        <dd>
+            <div *ngIf="doctor.photo">
+                <a (click)="openFile(doctor.photoContentType, doctor.photo)" jhiTranslate="entity.action.open">open</a>
+                {{doctor.photoContentType}}, {{byteSize(doctor.photo)}}
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'doctor/'+ doctor.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

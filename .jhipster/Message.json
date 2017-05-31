@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "chat",
+            "otherEntityName": "chat",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "massageAttachment",
+            "otherEntityName": "messageAttachment",
+            "otherEntityRelationshipName": "message"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "messageText",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sender",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dateTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170528165307",
+    "entityTableName": "message",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

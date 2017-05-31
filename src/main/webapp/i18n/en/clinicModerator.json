@@ -1,0 +1,26 @@
+{
+    "clinicApp": {
+        "clinicModerator" : {
+            "home": {
+                "title": "Clinic Moderators",
+                "createLabel": "Create a new Clinic Moderator",
+                "createOrEditLabel": "Create or edit a Clinic Moderator"
+            },
+            "created": "A new Clinic Moderator is created with identifier {{ param }}",
+            "updated": "A Clinic Moderator is updated with identifier {{ param }}",
+            "deleted": "A Clinic Moderator is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Clinic Moderator {{ id }}?"
+            },
+            "detail": {
+                "title": "Clinic Moderator"
+            },
+            "surname": "Surname",
+            "name": "Name",
+            "lastname": "Lastname",
+            "phone": "Phone",
+            "clinic": "Clinic",
+            "clinicModeratorProfile": "Clinic Moderator Profile"
+        }
+    }
+}

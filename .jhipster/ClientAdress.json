@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "client",
+            "otherEntityName": "client",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "clientAdress"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "adress",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170528165302",
+    "entityTableName": "client_adress",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

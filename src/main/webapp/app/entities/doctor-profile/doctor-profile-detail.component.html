@@ -1,0 +1,35 @@
+
+<div *ngIf="doctorProfile">
+    <h2><span jhiTranslate="clinicApp.doctorProfile.detail.title">Doctor Profile</span> {{doctorProfile.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.doctorProfile.email">Email</span></dt>
+        <dd>
+            <span>{{doctorProfile.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.doctorProfile.passHash">Pass Hash</span></dt>
+        <dd>
+            <span>{{doctorProfile.passHash}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.doctorProfile.doctor">Doctor</span></dt>
+        <dd>
+            <div *ngIf="doctorProfile.doctor">
+                <a [routerLink]="['/doctor', doctorProfile.doctor?.id]">{{doctorProfile.doctor?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'doctor-profile/'+ doctorProfile.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

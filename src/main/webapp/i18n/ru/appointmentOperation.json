@@ -1,0 +1,23 @@
+{
+    "clinicApp": {
+        "appointmentOperation" : {
+            "home": {
+                "title": "Appointment Operations",
+                "createLabel": "Создать новый Appointment Operation",
+                "createOrEditLabel": "Создать или отредактировать Appointment Operation"
+            },
+            "created": "Новый Appointment Operation создан с идентификатором {{ param }}",
+            "updated": "Appointment Operation обновлен с идентификатором {{ param }}",
+            "deleted": "Appointment Operation удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Appointment Operation {{ id }}?"
+            },
+            "detail": {
+                "title": "Appointment Operation"
+            },
+            "price": "Price",
+            "appointment": "Appointment",
+            "operation": "Operation"
+        }
+    }
+}

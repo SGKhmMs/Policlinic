@@ -1,0 +1,22 @@
+{
+    "clinicApp": {
+        "doctorAdress" : {
+            "home": {
+                "title": "Doctor Adresses",
+                "createLabel": "Создать новый Doctor Adress",
+                "createOrEditLabel": "Создать или отредактировать Doctor Adress"
+            },
+            "created": "Новый Doctor Adress создан с идентификатором {{ param }}",
+            "updated": "Doctor Adress обновлен с идентификатором {{ param }}",
+            "deleted": "Doctor Adress удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Doctor Adress {{ id }}?"
+            },
+            "detail": {
+                "title": "Doctor Adress"
+            },
+            "adress": "Adress",
+            "doctor": "Doctor"
+        }
+    }
+}

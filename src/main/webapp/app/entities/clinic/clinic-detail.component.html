@@ -1,0 +1,41 @@
+
+<div *ngIf="clinic">
+    <h2><span jhiTranslate="clinicApp.clinic.detail.title">Clinic</span> {{clinic.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.clinic.clinicName">Clinic Name</span></dt>
+        <dd>
+            <span>{{clinic.clinicName}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.clinic.adress">Adress</span></dt>
+        <dd>
+            <span>{{clinic.adress}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.clinic.beginOfWork">Begin Of Work</span></dt>
+        <dd>
+            <span>{{clinic.beginOfWork | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.clinic.endOfWork">End Of Work</span></dt>
+        <dd>
+            <span>{{clinic.endOfWork | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.clinic.registryPhone">Registry Phone</span></dt>
+        <dd>
+            <span>{{clinic.registryPhone}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'clinic/'+ clinic.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

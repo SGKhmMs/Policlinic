@@ -1,0 +1,23 @@
+{
+    "clinicApp": {
+        "appointmentOperation" : {
+            "home": {
+                "title": "Appointment Operations",
+                "createLabel": "Create a new Appointment Operation",
+                "createOrEditLabel": "Create or edit a Appointment Operation"
+            },
+            "created": "A new Appointment Operation is created with identifier {{ param }}",
+            "updated": "A Appointment Operation is updated with identifier {{ param }}",
+            "deleted": "A Appointment Operation is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Appointment Operation {{ id }}?"
+            },
+            "detail": {
+                "title": "Appointment Operation"
+            },
+            "price": "Price",
+            "appointment": "Appointment",
+            "operation": "Operation"
+        }
+    }
+}

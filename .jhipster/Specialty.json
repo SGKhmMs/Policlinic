@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "doctorSpecialty",
+            "otherEntityName": "doctorSpecialty",
+            "otherEntityRelationshipName": "specialty"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "specialtyName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170528165257",
+    "entityTableName": "specialty",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

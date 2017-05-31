@@ -1,0 +1,22 @@
+{
+    "clinicApp": {
+        "clinicModeratorProfile" : {
+            "home": {
+                "title": "Clinic Moderator Profiles",
+                "createLabel": "Create a new Clinic Moderator Profile",
+                "createOrEditLabel": "Create or edit a Clinic Moderator Profile"
+            },
+            "created": "A new Clinic Moderator Profile is created with identifier {{ param }}",
+            "updated": "A Clinic Moderator Profile is updated with identifier {{ param }}",
+            "deleted": "A Clinic Moderator Profile is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Clinic Moderator Profile {{ id }}?"
+            },
+            "detail": {
+                "title": "Clinic Moderator Profile"
+            },
+            "passHash": "Pass Hash",
+            "email": "Email"
+        }
+    }
+}

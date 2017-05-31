@@ -1,0 +1,22 @@
+{
+    "clinicApp": {
+        "entryAttachment" : {
+            "home": {
+                "title": "Entry Attachments",
+                "createLabel": "Создать новый Entry Attachment",
+                "createOrEditLabel": "Создать или отредактировать Entry Attachment"
+            },
+            "created": "Новый Entry Attachment создан с идентификатором {{ param }}",
+            "updated": "Entry Attachment обновлен с идентификатором {{ param }}",
+            "deleted": "Entry Attachment удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Entry Attachment {{ id }}?"
+            },
+            "detail": {
+                "title": "Entry Attachment"
+            },
+            "attachmentFile": "Attachment File",
+            "cardEntry": "Card Entry"
+        }
+    }
+}

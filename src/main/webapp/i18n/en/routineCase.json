@@ -1,0 +1,24 @@
+{
+    "clinicApp": {
+        "routineCase" : {
+            "home": {
+                "title": "Routine Cases",
+                "createLabel": "Create a new Routine Case",
+                "createOrEditLabel": "Create or edit a Routine Case"
+            },
+            "created": "A new Routine Case is created with identifier {{ param }}",
+            "updated": "A Routine Case is updated with identifier {{ param }}",
+            "deleted": "A Routine Case is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Routine Case {{ id }}?"
+            },
+            "detail": {
+                "title": "Routine Case"
+            },
+            "beginTime": "Begin Time",
+            "endTime": "End Time",
+            "description": "Description",
+            "doctorDayRoutine": "Doctor Day Routine"
+        }
+    }
+}

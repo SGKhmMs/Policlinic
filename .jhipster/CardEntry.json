@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "entryAttachent",
+            "otherEntityName": "entryAttachment",
+            "otherEntityRelationshipName": "cardEntry"
+        },
+        {
+            "relationshipName": "appointment",
+            "otherEntityName": "appointment",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "entryText",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170528165255",
+    "entityTableName": "card_entry",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

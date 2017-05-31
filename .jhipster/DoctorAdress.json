@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "doctor",
+            "otherEntityName": "doctor",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "doctorAdress"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "adress",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170528165248",
+    "entityTableName": "doctor_adress",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

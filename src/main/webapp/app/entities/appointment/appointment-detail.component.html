@@ -1,0 +1,37 @@
+
+<div *ngIf="appointment">
+    <h2><span jhiTranslate="clinicApp.appointment.detail.title">Appointment</span> {{appointment.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.appointment.price">Price</span></dt>
+        <dd>
+            <span>{{appointment.price}}</span>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.appointment.client">Client</span></dt>
+        <dd>
+            <div *ngIf="appointment.client">
+                <a [routerLink]="['/client', appointment.client?.id]">{{appointment.client?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.appointment.routineCase">Routine Case</span></dt>
+        <dd>
+            <div *ngIf="appointment.routineCase">
+                <a [routerLink]="['/routine-case', appointment.routineCase?.id]">{{appointment.routineCase?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'appointment/'+ appointment.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

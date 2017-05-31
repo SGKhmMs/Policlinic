@@ -1,0 +1,22 @@
+{
+    "clinicApp": {
+        "clientAdress" : {
+            "home": {
+                "title": "Client Adresses",
+                "createLabel": "Создать новый Client Adress",
+                "createOrEditLabel": "Создать или отредактировать Client Adress"
+            },
+            "created": "Новый Client Adress создан с идентификатором {{ param }}",
+            "updated": "Client Adress обновлен с идентификатором {{ param }}",
+            "deleted": "Client Adress удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Client Adress {{ id }}?"
+            },
+            "detail": {
+                "title": "Client Adress"
+            },
+            "adress": "Adress",
+            "client": "Client"
+        }
+    }
+}

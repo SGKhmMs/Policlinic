@@ -1,0 +1,33 @@
+
+<div *ngIf="clinicDoctor">
+    <h2><span jhiTranslate="clinicApp.clinicDoctor.detail.title">Clinic Doctor</span> {{clinicDoctor.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="clinicApp.clinicDoctor.clinic">Clinic</span></dt>
+        <dd>
+            <div *ngIf="clinicDoctor.clinic">
+                <a [routerLink]="['/clinic', clinicDoctor.clinic?.id]">{{clinicDoctor.clinic?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="clinicApp.clinicDoctor.doctor">Doctor</span></dt>
+        <dd>
+            <div *ngIf="clinicDoctor.doctor">
+                <a [routerLink]="['/doctor', clinicDoctor.doctor?.id]">{{clinicDoctor.doctor?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'clinic-doctor/'+ clinicDoctor.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
