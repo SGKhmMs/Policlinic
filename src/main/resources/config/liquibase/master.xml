@@ -5,6 +5,47 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165247_added_entity_Doctor.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165248_added_entity_DoctorAdress.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165249_added_entity_DoctorProfile.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165250_added_entity_Clinic.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165251_added_entity_ClinicModerator.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165252_added_entity_ClinicModeratorProfile.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165253_added_entity_DoctorDayRoutine.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165254_added_entity_RoutineCase.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165255_added_entity_CardEntry.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165256_added_entity_EntryAttachment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165257_added_entity_Specialty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165258_added_entity_Client.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165259_added_entity_Appointment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165300_added_entity_Service.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165301_added_entity_ClientProfile.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165302_added_entity_ClientAdress.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165303_added_entity_ClinicDoctor.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165304_added_entity_DoctorSpecialty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165305_added_entity_DoctorReview.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165306_added_entity_Chat.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165307_added_entity_Message.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165308_added_entity_MessageAttachment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170531180642_added_entity_Operation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170531180643_added_entity_AppointmentOperation.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20170528165248_added_entity_constraints_DoctorAdress.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165249_added_entity_constraints_DoctorProfile.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165251_added_entity_constraints_ClinicModerator.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165253_added_entity_constraints_DoctorDayRoutine.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165254_added_entity_constraints_RoutineCase.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165255_added_entity_constraints_CardEntry.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165256_added_entity_constraints_EntryAttachment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165259_added_entity_constraints_Appointment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165301_added_entity_constraints_ClientProfile.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165302_added_entity_constraints_ClientAdress.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165303_added_entity_constraints_ClinicDoctor.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165304_added_entity_constraints_DoctorSpecialty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165305_added_entity_constraints_DoctorReview.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165306_added_entity_constraints_Chat.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165307_added_entity_constraints_Message.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170528165308_added_entity_constraints_MessageAttachment.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170531180643_added_entity_constraints_AppointmentOperation.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
